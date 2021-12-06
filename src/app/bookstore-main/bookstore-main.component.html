@@ -1,12 +1,16 @@
-<div class="container">
+<div class="container" style="margin:2em">
     <div class="row">
         <div class="col-md-12">
             <button id="accedi" (click)="accedi()">GetAuthCode/Token</button>
             <button id="logout" (click)="onLogout()">Logout</button>
             <a href="{{this.baseUrl}}logout">Logout</a>
             <br/>
-            <a routerLink="/book-store">Book Store</a>
-
+            
+        </div>
+        <div class="col-md-12">
+            <a routerLink="/book-store" style="margin:5px">Book Store</a>
+            
+            <a routerLink="/insert" style="margin:5px" style="margin:5px">Insert Book</a>
         </div>
         <div class="col-md-12">
             <router-outlet></router-outlet>

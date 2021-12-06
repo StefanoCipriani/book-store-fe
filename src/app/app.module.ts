@@ -6,15 +6,20 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BookstoreMainComponent } from './bookstore-main/bookstore-main.component';
 import { BookListComponent } from './book-list/book-list.component';
+import { BookItemComponent } from './book-item/book-item.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     BookstoreMainComponent,
-    BookListComponent
+    BookListComponent,
+    BookItemComponent
   ],
   imports: [
     BrowserModule,
+    FormsModule, 
+    ReactiveFormsModule,
     AppRoutingModule,
     HttpClientModule,
   ],
