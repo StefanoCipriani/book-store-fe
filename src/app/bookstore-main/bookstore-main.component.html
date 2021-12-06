@@ -1,0 +1,15 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <button id="accedi" (click)="accedi()">GetAuthCode/Token</button>
+            <button id="logout" (click)="onLogout()">Logout</button>
+            <a href="{{this.baseUrl}}logout">Logout</a>
+            <br/>
+            <a routerLink="/book-store">Book Store</a>
+
+        </div>
+        <div class="col-md-12">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>
