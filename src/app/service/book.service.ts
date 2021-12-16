@@ -32,6 +32,7 @@ export class BookService {
   updateBook(editedItemIndex: number, newBook: Book) {
     console.log("updateBook"+ newBook)
     this.books[editedItemIndex] = newBook;
+    
   }
   getBook(index: number): Book {
     return this.books[index];

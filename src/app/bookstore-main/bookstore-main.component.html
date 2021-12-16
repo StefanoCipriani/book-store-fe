@@ -1,19 +1,29 @@
-<div class="container" style="margin:2em">
+
     <div class="row">
-        <div class="col-md-12">
-            <button id="accedi" (click)="accedi()">GetAuthCode/Token</button>
-            <button id="logout" (click)="onLogout()">Logout</button>
-            <a href="{{this.baseUrl}}logout">Logout</a>
+        <div class="col-12 mb-3 text-center">
+            <button id="abilitaAutenticazione" (click)="abilitaAutenticazione()" class="btn btn-primary">Abilita Autenticazione</button>
+            <button id="accedi" [disabled]="!this.authEnabled" (click)="accedi()" class="btn btn-primary" style="margin-left:1em">GetAuthCode/Token</button>
+            <button id="logout" [disabled]="!this.authEnabled" (click)="onLogout()" class="btn btn-primary" style="margin-left:1em" >Logout</button>
+            <!--<a href="{{this.baseUrl}}logout">Logout</a> -->
             <br/>
             
+            <hr/>
         </div>
+        <div class="col">
+            <div class="text-break">
+                {{token}}
+            </div>
+            <hr/>
+        </div>
+        <!--
         <div class="col-md-12">
             <a routerLink="/book-store" style="margin:5px">Book Store</a>
             
             <a routerLink="/insert" style="margin:5px" style="margin:5px">Insert Book</a>
         </div>
+        -->
+        
         <div class="col-md-12">
             <router-outlet></router-outlet>
         </div>
     </div>
-</div>

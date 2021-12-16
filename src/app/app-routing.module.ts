@@ -5,7 +5,7 @@ import { BookItemComponent } from './book-item/book-item.component';
 import { BookListComponent } from './book-list/book-list.component';
 
 const routes: Routes = [
-  //{ path: '', redirectTo: '/recipes', pathMatch: 'full' },
+  { path: '', redirectTo: 'book-store', pathMatch: 'full' },
   //{ path: '', component: AppComponent },
   { path: 'book-store', component: BookListComponent },
   { path: 'insert', component: BookItemComponent }
