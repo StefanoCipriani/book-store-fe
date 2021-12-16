@@ -21,7 +21,8 @@ export class BookService {
   }
 
   deleteBook(editedItemIndex: number) {
-    throw new Error('Method not implemented.');
+    this.books.splice(editedItemIndex,1)
+    this.booksChanged.next(this.books.slice())
   }
   addBook(newBook: Book) {
     console.log(newBook);
@@ -29,9 +30,10 @@ export class BookService {
     this.booksChanged.next(this.books.slice());
   }
   updateBook(editedItemIndex: number, newBook: Book) {
-    throw new Error('Method not implemented.');
+    console.log("updateBook"+ newBook)
+    this.books[editedItemIndex] = newBook;
   }
   getBook(index: number): Book {
-    throw new Error('Method not implemented.');
+    return this.books[index];
   }
 }

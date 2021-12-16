@@ -1,5 +1,6 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { ActivatedRoute, Navigation, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { Book } from '../model/book.model';
 import { BookService } from '../service/book.service';
@@ -17,9 +18,13 @@ export class BookItemComponent implements OnInit {
   editMode = false;
   editedItemIndex: number;
   editedItem: Book;
+  navigation: Navigation;
 
-  constructor(private bookService: BookService) { }
-  
+  constructor(private route: ActivatedRoute,
+    private bookService: BookService,
+    private router: Router) { 
+      this.navigation = this.router.getCurrentNavigation();
+    }
 
   ngOnInit() {
     this.subscription = this.bookService.startedEditing.subscribe(
@@ -29,7 +34,7 @@ export class BookItemComponent implements OnInit {
         this.editedItem = this.bookService.getBook(index);
         this.slForm.setValue({
           name:this.editedItem.name,
-          amount:this.editedItem.author
+          author:this.editedItem.author
         });
       }
     );
@@ -58,6 +63,7 @@ export class BookItemComponent implements OnInit {
   }
 
   ngOnDestroy(): void {
+    console.log("onDestroy")
     this.subscription.unsubscribe();
   }
 

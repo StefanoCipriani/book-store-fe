@@ -8,13 +8,15 @@ import { BookstoreMainComponent } from './bookstore-main/bookstore-main.componen
 import { BookListComponent } from './book-list/book-list.component';
 import { BookItemComponent } from './book-item/book-item.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BookstoreMainComponent,
     BookListComponent,
-    BookItemComponent
+    BookItemComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

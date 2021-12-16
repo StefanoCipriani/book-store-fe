@@ -8,9 +8,22 @@
           *ngFor="let book of books; let i=index"
           (click)="onEditItem(i)"
         >
-          {{ book.name }} ({{ book.author }}) <br/>
+          {{ book.name }} ({{ book.author }})<br/>
         </a>
       </ul>
     </div>
   </div>
+
+  <!--
+  <div>
+      <table>
+      <tr class="row" *ngFor="let book of books; let i=index">
+        <td class="col-4">{{ book.name }}</td>
+        <td class="col-4">{{ book.author }}</td>
+        <td class="col-4"><button class="btn btn-primary" (click)="onEditItem(i)">Modifica</button></td>
+      </tr>
+      </table>
+  </div>
+-->
+  <app-book-item></app-book-item>
   
