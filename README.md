@@ -33,3 +33,4 @@ docker run -d -it -p 90:80 --name=book-store-fe  stefanocipriani/book-store-fe <
 ## Kubernates
 kubectl apply -f deployment.local.yaml <br/>
 minikube service angular-service <br/>
+minikube service angular-service <br/>
