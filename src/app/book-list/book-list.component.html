@@ -7,7 +7,7 @@
   <div class="col-12">
     <hr/>
   </div>
-  
+
   <div class="col-4">
     <h4>Libri in biblioteca: </h4>
   </div>
@@ -25,7 +25,7 @@
           *ngFor="let book of books; let i=index"
           (click)="onEditItem(i)"
         >
-        {{ i+1 }} - {{ book.name }} ({{ book.author }})<br/>
+        {{ i+1 }} - [{{ book.author.surname}}, {{book.author.name}}] {{ book.name }}, {{book.editore}}<br/>
         </a>
       </ul>
     </div>
@@ -44,4 +44,3 @@
 -->
 <hr/>
   <app-book-item></app-book-item>
-  
